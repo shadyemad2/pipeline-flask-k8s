@@ -51,13 +51,14 @@ pipeline-flask-k8s/
 > Upload your screenshots to an `images/` folder and update these paths
 
 - ✅ GitHub Actions Success  
- <img width="692" height="212" alt="run-job" src="https://github.com/user-attachments/assets/47b72e9e-5d8e-4e3a-8903-d2474a5a55d0" /> | <img width="925" height="758" alt="trigger-github" src="https://github.com/user-attachments/assets/6f3952c5-8aa4-43e2-a1fe-048eeac13b35" />
+ <img width="692" height="212" alt="run-job" src="https://github.com/user-attachments/assets/47b72e9e-5d8e-4e3a-8903-d2474a5a55d0" /> 
+ <img width="925" height="758" alt="trigger-github" src="https://github.com/user-attachments/assets/6f3952c5-8aa4-43e2-a1fe-048eeac13b35" />
 
 - ✅ Minikube Pods  
-<img width="659" height="288" alt="kubectl-pods" src="https://github.com/user-attachments/assets/d16e200f-6aa6-455a-b8d2-35a8e1c21b7d" />
+ <img width="659" height="288" alt="kubectl-pods" src="https://github.com/user-attachments/assets/d16e200f-6aa6-455a-b8d2-35a8e1c21b7d" />
 
 - 🌐 Flask App  
-<img width="1860" height="535" alt="flask-app" src="https://github.com/user-attachments/assets/5198ffe9-2285-4ee5-a682-559667748ee2" />
+ <img width="1860" height="535" alt="flask-app" src="https://github.com/user-attachments/assets/5198ffe9-2285-4ee5-a682-559667748ee2" />
 
 
 ## 🙋‍♂️ Author
