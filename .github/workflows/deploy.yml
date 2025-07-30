@@ -1,4 +1,4 @@
-name: Auto Deploy to Minikube
+name: Auto local Deploy to Minikube
 
 on:
   push:
@@ -9,7 +9,7 @@ env:
 
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
     - name: Checkout code
@@ -39,3 +39,4 @@ jobs:
         export KUBECONFIG=$PWD/kubeconfig
         kubectl apply -f k8s/deployment.yaml
         kubectl apply -f k8s/service.yaml
+
