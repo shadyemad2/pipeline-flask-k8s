@@ -1,0 +1,41 @@
+name: Auto Deploy to Minikube
+
+on:
+  push:
+    branches: [main]
+
+env:
+  IMAGE_NAME: shadyemad/pipeline-flask-k8s:latest
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Log in to DockerHub
+      uses: docker/login-action@v2
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+    - name: Build Docker image
+      run: docker build -t $IMAGE_NAME:latest .
+
+    - name: Push Docker image
+      run: docker push $IMAGE_NAME:latest
+
+    - name: Setup kubectl with Minikube kubeconfig
+      run: |
+        echo "${{ secrets.KUBECONFIG_DATA }}" | base64 -d > kubeconfig
+        export KUBECONFIG=$PWD/kubeconfig
+        kubectl version --client
+        kubectl config use-context minikube
+
+    - name: Apply Kubernetes configs
+      run: |
+        export KUBECONFIG=$PWD/kubeconfig
+        kubectl apply -f kubernetes/deployment.yaml
+        kubectl apply -f kubernetes/service.yaml
